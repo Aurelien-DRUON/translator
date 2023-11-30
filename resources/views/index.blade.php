@@ -11,10 +11,17 @@
 <body>
     <h1>Traducteur</h1>
     <span>Texte à traduire</span>
-    <form action="/translate" method="post">
+    <form action="/translate" method="POST">
         @csrf
-        <input type="text" name="translation">
+        <input type="text" name="text">
         <input type="submit" value="Let's a go (mario)">
-</body>
+    </form>
+    <h1>Traduction</h1>
+    @isset($text)
+        <span>
+            {{ $translation }}
+        </span>
+        @endif
+    </body>
 
-</html>
+    </html>
